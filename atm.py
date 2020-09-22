@@ -1,14 +1,14 @@
-kullanici_adi="Rabia"
-kullanici_sifre="123"
-bakiye=1000
-print("   Bolparalı ATM'ye Hoş Geldiniz")
+kullanici_adi="Rabia" #kullanıcının adını tanımladık
+kullanici_sifre="123" #kullanıcının şifresini tanımladık
+bakiye=1000 #kullanıcının başlangıç bakiyesini tanımladık
+print("   Bolparalı ATM'ye Hoş Geldiniz") #kod çalıştırıldığında açılışta gelecek hoş geldin metnini yazdırdık
 
-print("Adınızı Giriniz")
-adiniz=(input())
-print("Şifrenizi Giriniz")
+print("Adınızı Giriniz") #kullanıcının adını girmesini istedik
+adiniz=(input()) #adını gireceği alana input ekledik ismini alabilmek için
+print("Şifrenizi Giriniz") #aynı işlemleri şifre için de yaptık
 sifre=(input())
-if((adiniz==kullanici_adi) & (sifre==kullanici_sifre)):
-    print("Başarıyla Giriş Yaptınız")
+if((adiniz==kullanici_adi) & (sifre==kullanici_sifre)): #kullanıcının gireceği isim ve şifre ile bizim tanımladığımız şifre ve isim aynı ise
+    print("Başarıyla Giriş Yaptınız") #başarıyla giriş yaptınız de ve while true ile devam et dedik. Eğer yanlışsa en aşağıda yer alan şifre yanlış çıktısını verecek
     while True:
         islem=int(input(""" 
                  
@@ -18,10 +18,10 @@ if((adiniz==kullanici_adi) & (sifre==kullanici_sifre)):
           4-Şifre Değiştirme
           5-Çıkış                     
     Yapmak istediğiniz işlemi seçiniz:
-            """))
+            """))  #yapılacak işlemlere sayılar verdik
 
 
-        if (islem == 1):
+        if (islem == 1): #eğer kullanıcı biri seçerse bakiye tutarını format fonksiyonu ile kullanıcıya gösterdik. Sonrasında çıkış yaparsa #break ile işlemi bitir, devam etmek isterse başa sar
             print("***Bakiye tutarınız: {}***".format(bakiye))
             islem2=(int(input("***Çıkmak için 1'e devam etmek için 2'ye basınız: ***")))
             if (islem2 == 2):
@@ -29,7 +29,7 @@ if((adiniz==kullanici_adi) & (sifre==kullanici_sifre)):
             if (islem2 == 1):
                 print("Bakiye sorguladığınız için teşekkürler, tekrar görüşmek üzere") 
                 break
-        if (islem == 2):
+        if (islem == 2): #kullanıcı ikiyi seçerse yatırmak istediği miktarı sor ve bakiyeden çıkar. güncel bakiyeyi göster. yine çıkmak isteyip istemediğini sor. Bu işlemler 5. işleme kadar aynı devam etmekte.
             miktar= int(input("Yatırılacak miktar: "))
             bakiye= bakiye+miktar
             print("Güncel Bakiyeniz {0} TL oldu".format(bakiye))
@@ -70,5 +70,5 @@ if((adiniz==kullanici_adi) & (sifre==kullanici_sifre)):
         if (islem==5):
             print("Zaman ayırdığınız için teşekkür ederiz. Yine Bekleriz!")
             break
-else:
+else: #kullanıcı en başta şifre ve ismini yanlış yazarsa aşağıdaki metni yazdıracak
     print("Girmiş olduğunuz şifre veya isim yanlış, tekrar deneyiniz!")
